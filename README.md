@@ -69,13 +69,13 @@ npm start
 Terminal 2 (frontend):
 ```bash
 cd frontend
-npm run dev
+npm run dev -- --host
 ```
 
 ## 4) Access URLs
 
-- Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:5000`
+- Frontend: `http://public_ip:5173`
+- Backend API: `http://public_ip:5000`
 
 ## Notes
 
