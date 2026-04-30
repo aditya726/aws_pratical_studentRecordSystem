@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Student = require('../models/Student');
+const auth = require('../middleware/auth');
 
+// Apply auth middleware to all routes in this router
+router.use(auth);
 // GET all students
 router.get('/', async (req, res) => {
     try {

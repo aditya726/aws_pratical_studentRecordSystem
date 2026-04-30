@@ -1,8 +1,8 @@
 # Student Records Management System
 
-Simple full-stack student records management app:
-- `backend`: Node.js + Express + MongoDB API
-- `frontend`: React + Vite app (with TailwindCSS)
+Simple full-stack student records management app with secure authentication:
+- `backend`: Node.js + Express + MongoDB API + JWT Authentication
+- `frontend`: React + Vite app (with TailwindCSS, React Router, and a Premium Landing Page)
 
 ## Prerequisites
 
@@ -39,6 +39,7 @@ sudo apt install npm
    ```
 2. Create/Update `.env` file with the following variables:
    - `MONGO_URI` (your MongoDB connection string)
+   - `JWT_SECRET` (your secret key for signing tokens)
    - Optional: `PORT` (default `5000`)
 
 ## 2) Install Dependencies

@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.use('/api/auth', require('./routes/auth'));
 const studentRoutes = require('./routes/students');
 app.use('/api/students', studentRoutes);
 
