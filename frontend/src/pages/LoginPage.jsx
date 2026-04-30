@@ -18,7 +18,7 @@ export default function LoginPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.post('http://127.0.0.1:5000/api/auth/login', formData);
+      const res = await axios.post('/api/auth/login', formData);
       login(res.data.token, res.data.user);
       navigate('/dashboard');
     } catch (err) {

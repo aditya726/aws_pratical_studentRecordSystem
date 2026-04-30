@@ -5,7 +5,7 @@ import StudentForm from '../components/StudentForm';
 import StudentList from '../components/StudentList';
 import { AuthContext } from '../context/AuthContext';
 
-const API_URL = 'http://127.0.0.1:5000/api/students';
+const API_URL = '/api/students';
 
 export default function Dashboard() {
   const { user, logout } = useContext(AuthContext);
@@ -75,7 +75,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans p-4 md:p-8">
       <div className="max-w-5xl mx-auto space-y-8">
-        
+
         {/* Header */}
         <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
           <div className="flex items-center gap-4">
@@ -87,17 +87,17 @@ export default function Dashboard() {
               <p className="text-sm text-slate-500">Welcome back, {user?.name || 'User'}</p>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-3 w-full sm:w-auto">
             {!showForm && (
-              <button 
+              <button
                 onClick={() => setShowForm(true)}
                 className="btn-primary flex-1 sm:flex-none"
               >
                 <Plus size={18} className="mr-2" /> Add Student
               </button>
             )}
-            <button 
+            <button
               onClick={logout}
               className="btn-secondary"
               title="Logout"
@@ -118,8 +118,8 @@ export default function Dashboard() {
         <main>
           {showForm ? (
             <div className="mb-8">
-              <StudentForm 
-                onSubmit={handleAddOrUpdate} 
+              <StudentForm
+                onSubmit={handleAddOrUpdate}
                 initialData={editingStudent}
                 onCancel={handleCancelForm}
               />
@@ -131,14 +131,14 @@ export default function Dashboard() {
               <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-600"></div>
             </div>
           ) : (
-            <StudentList 
-              students={students} 
-              onEdit={handleEdit} 
+            <StudentList
+              students={students}
+              onEdit={handleEdit}
               onDelete={handleDelete}
             />
           )}
         </main>
-        
+
       </div>
     </div>
   );
